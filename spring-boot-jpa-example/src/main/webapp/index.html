@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+function doClearTime(e){
+	var id=e.id;
+	var val=e.value;
+	
+	var cc=document.getElementById(id).checked;
+	
+	//alert("*****id********"+id+"****val**"+val+"***************"+cc);
+	if(id=='defaultTime'){
+	    //alert("if");
+		document.getElementById("customTime").value="N";
+		document.getElementById("customTime").checked=false;
+		document.getElementById("custtime").value="";
+		//alert("*****id********"+id+"****val******"+val);
+	}
+	if(id=='customTime')
+	{
+		document.getElementById("deftime").value="";
+		document.getElementById("defaultTime").value="N";
+		document.getElementById("defaultTime").checked=false;
+		//alert("*****id********"+id+"****val******"+val);
+	}
+}
+
+</script>
+<body>
+<input type="radio" value="Y" id="defaultTime" onchange="doClearTime(this);">
+default  time
+<input type="text" id="deftime">
+<input type="radio" value="N" id="customTime" onchange="doClearTime(this);">
+custom time
+<input type="text" id="custtime">
+</body>
+</html>

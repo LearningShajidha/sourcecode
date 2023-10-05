@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Ang</title>
+</head>
+<body>
+without ng-app
+<div ng-app="" ng-init="quantity=1;cost=5">
+<p>Total in dollar: <span ng-bind="quantity * cost"> 
+</span></p>
+total {{quantity * cost}}
+</div>
+<div ng-app="myapp" ng-controller="formCtrl">
+
+<form >
+<input type="text" ng-model="myvar"  value="shaji">
+<input type="checkbox" ng-model="checkvar">
+<input type="radio" ng-model="radiovar" ng-click="myRadio()"  value="apple">Apple
+<input type="radio" ng-model="radiovar"  value="orange">Orange
+<input type="radio" ng-model="radiovar"  value="mango">Mango
+<select my-model="selectVar">
+<option value="1">one
+<option value="2">two
+<option value="3">three
+<option value="4">four
+</select>
+ </form>
+<h1>The value is {{myvar}}  </h1>
+<p ng-show='checkvar'> value  </p>
+
+</div>
+<script>
+var app=angular.module('myapp',[]).controller('formCtrl',function($scope)
+		{
+	$scope.myvar='jgkhh';
+	$scope.myRadio()=function(){
+		$scope.myvar="hf";
+	}
+		}
+		)
+
+</script>
+
+</body>
+</html>
